@@ -1,0 +1,38 @@
+{
+  "name": "react-litipsum",
+  "version": "1.0.1",
+  "description": "A simple react component that supplies dummy text from litipsum.com.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "^19.0.2",
+    "jest-fetch-mock": "^1.4.1",
+    "prop-types": "^15.5.8",
+    "react-test-renderer": "^15.6.2",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "scripts": {
+    "server": "./node_modules/.bin/webpack-dev-server --hot --inline",
+    "build": "./node_modules/.bin/webpack -p --config=webpack.build.config.js",
+    "start": "npm run build && npm run server",
+    "test": "jest"
+  },
+  "jest": {
+    "automock": false
+  },
+  "repository": "https://github.com/robsheely/react-litipsum",
+  "author": "Rob Sheely",
+  "license": "MIT"
+}
