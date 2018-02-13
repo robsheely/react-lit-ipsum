@@ -1,97 +1,107 @@
-# [Create React Component](https://gokulkrishh.github.io/create-react-component/) [![Build Status](https://travis-ci.org/gokulkrishh/create-react-component.svg?branch=master)](https://travis-ci.org/gokulkrishh/create-react-component)
+# [React Litipsum Component](https://github.com/robsheely/react-lit-ipsum/)
 
-*A simple react component boilerplate using webpack v2*
+*A simple React component that loads placeholder test from [LitIpsum.com](https://litipsum.com/)*
+>"Lit Ipsum is a dummy text generator for web designers and developers. As an alternative to boring old Lorem Ipsum generators, it chooses passages from copyright-free literature courtesy of the Gutenberg Project. You can design using real English sentences."
 
-### [Demo](https://gokulkrishh.github.io/create-react-component/)
+## Installation
 
-### Get Started
-
-##### 1. Clone the repository
-
-```bash
-git clone https://github.com/gokulkrishh/create-react-component && cd create-react-component
-```
-
-##### 2. Make it as your own repository
-
-```bash 
-rm -rf .git && git init
-```
-
-##### 3. Install dependencies
+Install via npm:
 
 ```bash
-npm install
+% npm install react-lit-ipsum
 ```
 
-(or) yarn
+## Usage
+
+This library fetches placeholder text from [LitIpsum.com](https://litipsum.com/):
+
+```jsx
+import React from 'react';
+import LitIpsum from 'react-lit-ipsum';  
+
+class LitIpsumDemo extends React.Component {
+  render() {
+    return <LitIpsum />;
+  }
+}
+```
+
+## Configuration Options
+
+You can pass the following props to the `LitIpsum` component:
+
+1\. `paragraphs` : The number of paragraphs to be generated: `<LitIpsum paragraphs={3}/>`
+
+2\. `book` : The literary work to use. Options are:
+
+  * 'holmes' : *The Adventures of Sherlock Holmes* `<LitIpsum book={'holmes'}/>`
+  
+  * 'jekyll' : *Strange Case of Dr Jekyll and Mr Hyde* `<LitIpsum book={'jekyll'}/>`
+
+  * 'dracula' : *Dracula* `<LitIpsum book={'dracula'}/>`
+  
+  * 'evalina' : *Evelina, or the History of a Young Lady's Entrance into the World* `<LitIpsum book={'evalina'}/>`
+ 
+  * 'johnson' : *The Life of Samuel Johnson* `<LitIpsum book={'johnson'}/>`
+  
+  * 'dorian' : *The picture of Dorian Gray* `<LitIpsum book={'dorian'}/>`
+  
+  * 'pride' : *Pride and Prejudice* `<LitIpsum book={'pride'}/>`
+  
+3\. `id` : A string to identify a specific instance of the component for styling. (See 'Styling' below).
+
+4\. `style` : An object of styles to be applied t the component. (See 'Styling' below).
+
+
+## Styling
+
+There are three ways to style the `LitIpsum` component:
+
+1\. Use the 'lit-ipsum' class CSS selector:
+
+``` css
+.lit-ipsum {
+    text-align: left;
+    color: blue;
+}
+```
+
+2\. Pass an 'id' prop to the component...
+
+``` JSX
+<LitIpsum id={'foo'}/>
+```
+...then use it as a CSS selector:
+``` css
+#foo {
+    font-size: 22px;
+}
+
+```
+
+3\. Pass a 'style' prop to the component:
+
+``` JSX
+<LitIpsum style={{color: 'red', fontFamily: 'Arial'}}/>
+```
+
+
+## Demo
+
+Example code is located in the `demo` directory. To see it in action, clone this repository, cd to the directory of your cloned repository and run:
 
 ```bash
-yarn install
+% npm install
+% npm start
 ```
 
-### Folder Structure
-
-```
-.
-├── __test__/
-├── dist/
-├── demo/
-├── src/
-│   └── index.js
-│   └── styles.css
-└── package.json
-└── webpack.build.config.js
-└── webpack.config.js
-```
-
-### Features
-
-- [`Webpack v2`](https://webpack.js.org/) for bundling the dependencies.
-
-- `ES6` support.
-
-- `ESLint` support.
-
-- [`Jest`](https://facebook.github.io/jest/docs/tutorial-react.html) for test cases.
-
-- `Travis CI` support.
-
-- Deploy demo page to `gh-pages`.
-
-### Make it as your own component
-
-- In [`package.json`](https://github.com/gokulkrishh/create-react-component/blob/master/package.json) file change the name from `create-react-component` to `your-component-name`.
-
-- Search for `HelloWorld` and replace it with `your component name`.
-
-### [Available scripts](https://github.com/gokulkrishh/create-react-component/blob/master/package.json#L28)
-
-- `npm run start`  - To start webpack dev-server.
-
-- `npm run watch`  - To watch a file change and build the component.
-
-- `npm run build`  - To produce the build file.
-
-- `npm run deploy` - To deploy the demo folder to gh-pages.
-
-- `npm run test`   - To run test cases.
-
-
-### [Publish as node module](https://docs.npmjs.com/getting-started/creating-node-modules)
-
-```bash 
-npm publish
-```
-
-*Make sure your package name, version and other information in `package.json` is correct.*
-
-#### TODO 
-
-- [ ] - cli similar to create-react-app
-
-*Found a bug or an improvement. File an issue and PR's are most welcome :)*
+Then point your browser to: `http://localhost:8080/`.
 
 ## License
 
-MIT © [Gokulakrishnan Kalaikovan](https://github.com/gokulkrishh)
+Released under The MIT License.*
+
+MIT © [Rob Sheely](https://github.com/robsheely)
+
+
+*Found a bug or an improvement? File an issue.
