@@ -105,9 +105,9 @@ Then point your browser to: `http://localhost:8080/`.
 
 ## License
 
-Released under The MIT License.*
+Released under The MIT License.
 
-MIT © [Rob Sheely](https://github.com/robsheely)
+© 2018 [Rob Sheely](https://github.com/robsheely)
 
 
-*Found a bug or an improvement? File an issue.
+*Found a bug or an improvement? [File an issue](https://github.com/robsheely/react-litipsum/issues).
