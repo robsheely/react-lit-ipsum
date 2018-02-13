@@ -28,7 +28,7 @@ class LitIpsumDemo extends React.Component {
 
 ## Configuration Options
 
-You can pass the following props to the `LitIpsum` component:
+You can pass the following optionsl props to the `LitIpsum` component:
 
 1\. `paragraphs` : The number of paragraphs to be generated: `<LitIpsum paragraphs={3}/>`
 
@@ -51,6 +51,12 @@ You can pass the following props to the `LitIpsum` component:
 3\. `id` : A string to identify a specific instance of the component for styling. (See 'Styling' below).
 
 4\. `style` : An object of styles to be applied t the component. (See 'Styling' below).
+
+*Note: Of course, you can combine these props to configure the output to your heart's content:*
+
+``` JSX
+<LitIpsum id={'foo'} book={evalina'} paragraphs={10} style={{color: 'blue'}}/>
+```
 
 
 ## Styling

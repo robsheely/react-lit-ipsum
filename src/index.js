@@ -12,11 +12,17 @@ const BOOKS = {
   pride: 'pride-and-prejudice'
 };
 
+/*A simple React component that loads placeholder test from [LitIpsum.com](https://litipsum.com/).
+ "Lit Ipsum is a dummy text generator for web designers and developers. As an alternative to boring 
+ old Lorem Ipsum generators, it chooses passages from copyright-free literature courtesy of the 
+ Gutenberg Project. You can design using real English sentences."
+*/
 class LitIpsum extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      paragraphs: ['loading...'],
+      responseText: ['loading...'],
       error: ''
     };
   }
@@ -30,14 +36,17 @@ class LitIpsum extends React.Component {
 
     fetch(LIT_IPSUM_URL + book + paragraphs + 'json')
     .then((response) => {
+      // Fetch will only reject a promise if the user is offline, or some unlikely networking error occurs, 
+      // such a DNS lookup failure. So, to catch any HTTP errors, we read the 'ok' flag which indicates 
+      // whether an HTTP response’s status code is in the successful range or not. 
       if (response.ok) {
         return response.json()
       }
       throw new Error(response.statusText);
     })
     .then((json) => {
-      if (Array.isArray(json.text)) {
-        this.setState({paragraphs: json.text});
+      if (json.text && Array.isArray(json.text)) {
+        this.setState({responseText: json.text});
       }
       else {
         throw new Error('Unable to parse server response.');
@@ -52,9 +61,9 @@ class LitIpsum extends React.Component {
     return (
       <div className={"lit-ipsum"} id={this.props.id} style={this.props.style}>
         {
-          (this.state.error !=+ '') ?
+          (this.state.error !== '') ?
             <p>{this.state.error}</p> :
-               this.state.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+            this.state.responseText.map((paragraph, index) => <p key={index}>{paragraph}</p>)
          }
       </div>
     );
@@ -64,7 +73,8 @@ class LitIpsum extends React.Component {
 LitIpsum.propTypes = {
   paragraphs: PropTypes.number,
   book: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
+  style: PropTypes.object
 };
 
 export default LitIpsum;

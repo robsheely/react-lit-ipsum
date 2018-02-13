@@ -1,7 +1,7 @@
 {
   "name": "react-litipsum",
   "version": "1.0.1",
-  "description": "A simple react component that supplies dummy text from litipsum.com.",
+  "description": "A simple react component that fetches placeholder text from litipsum.com.",
   "main": "dist/index.js",
   "dependencies": {
     "react": "^15.5.4",
@@ -32,7 +32,18 @@
   "jest": {
     "automock": false
   },
+  "keywords": [
+    "lorem",
+    "ipsum",
+    "placeholder",
+    "text",
+    "dummy",
+    "filler",
+    "litipsum",
+    "react"
+  ],
   "repository": "https://github.com/robsheely/react-litipsum",
   "author": "Rob Sheely",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": "https://github.com/robsheely/react-litipsum/issues"
 }
